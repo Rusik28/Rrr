@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C01ACD2C27F9A7FB0024CFD7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ACD2B27F9A7FB0024CFD7 /* Network.swift */; };
+		C01ACD2F27F9A83E0024CFD7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C01ACD2E27F9A83E0024CFD7 /* Alamofire */; };
+		C01ACD3227F9A8520024CFD7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C01ACD3127F9A8520024CFD7 /* SDWebImage */; };
+		C01ACD3427F9AE0C0024CFD7 /* UIimageDowland.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ACD3327F9AE0C0024CFD7 /* UIimageDowland.swift */; };
+		C01ACD3727F9B2E10024CFD7 /* presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01ACD3627F9B2E10024CFD7 /* presenter.swift */; };
 		C024C27327F720F80092073C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C024C27227F720F80092073C /* AppDelegate.swift */; };
 		C024C27527F720F80092073C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C024C27427F720F80092073C /* SceneDelegate.swift */; };
 		C024C27727F720F80092073C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C024C27627F720F80092073C /* ViewController.swift */; };
@@ -20,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C01ACD2B27F9A7FB0024CFD7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		C01ACD3327F9AE0C0024CFD7 /* UIimageDowland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageDowland.swift; sourceTree = "<group>"; };
+		C01ACD3627F9B2E10024CFD7 /* presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = presenter.swift; sourceTree = "<group>"; };
 		C024C26F27F720F80092073C /* hoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C024C27227F720F80092073C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C024C27427F720F80092073C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,12 +47,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01ACD3227F9A8520024CFD7 /* SDWebImage in Frameworks */,
+				C01ACD2F27F9A83E0024CFD7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C01ACD3527F9AE130024CFD7 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				C01ACD3327F9AE0C0024CFD7 /* UIimageDowland.swift */,
+				C01ACD2B27F9A7FB0024CFD7 /* Network.swift */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 		C024C26627F720F80092073C = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +85,10 @@
 			children = (
 				C024C27227F720F80092073C /* AppDelegate.swift */,
 				C024C27427F720F80092073C /* SceneDelegate.swift */,
+				C01ACD3527F9AE130024CFD7 /* other */,
+				C04B901F27F8F9AA002834BA /* view */,
 				C04B901E27F8F99D002834BA /* model */,
+				C04B902027F8F9B3002834BA /* presenter */,
 				C024C27B27F720F90092073C /* Assets.xcassets */,
 				C024C27D27F720F90092073C /* LaunchScreen.storyboard */,
 				C024C28027F720F90092073C /* Info.plist */,
@@ -78,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				C024C28827F74FAA0092073C /* HoffModel.swift */,
-				C04B901F27F8F9AA002834BA /* view */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -91,7 +112,6 @@
 				C024C28C27F752340092073C /* HoffCollectionViewCell.swift */,
 				C04B901C27F8F850002834BA /* HoffCollectionViewCellTwo.swift */,
 				C024C27827F720F80092073C /* Main.storyboard */,
-				C04B902027F8F9B3002834BA /* presenter */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -99,6 +119,7 @@
 		C04B902027F8F9B3002834BA /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				C01ACD3627F9B2E10024CFD7 /* presenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -119,6 +140,10 @@
 			dependencies = (
 			);
 			name = hoff;
+			packageProductDependencies = (
+				C01ACD2E27F9A83E0024CFD7 /* Alamofire */,
+				C01ACD3127F9A8520024CFD7 /* SDWebImage */,
+			);
 			productName = hoff;
 			productReference = C024C26F27F720F80092073C /* hoff.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +172,10 @@
 				Base,
 			);
 			mainGroup = C024C26627F720F80092073C;
+			packageReferences = (
+				C01ACD2D27F9A83E0024CFD7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C01ACD3027F9A8520024CFD7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = C024C27027F720F80092073C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +205,9 @@
 			files = (
 				C024C28727F74BF20092073C /* SecondViewController.swift in Sources */,
 				C024C27727F720F80092073C /* ViewController.swift in Sources */,
+				C01ACD3727F9B2E10024CFD7 /* presenter.swift in Sources */,
+				C01ACD3427F9AE0C0024CFD7 /* UIimageDowland.swift in Sources */,
+				C01ACD2C27F9A7FB0024CFD7 /* Network.swift in Sources */,
 				C04B901D27F8F850002834BA /* HoffCollectionViewCellTwo.swift in Sources */,
 				C024C27327F720F80092073C /* AppDelegate.swift in Sources */,
 				C024C28927F74FAA0092073C /* HoffModel.swift in Sources */,
@@ -400,6 +432,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C01ACD2D27F9A83E0024CFD7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C01ACD3027F9A8520024CFD7 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C01ACD2E27F9A83E0024CFD7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C01ACD2D27F9A83E0024CFD7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C01ACD3127F9A8520024CFD7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C01ACD3027F9A8520024CFD7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C024C26727F720F80092073C /* Project object */;
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class HoffCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var ImageViewOne: UIImageView!
+    @IBOutlet weak var imageViewOne: UIImageView!
     @IBOutlet weak var sellLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var oldPriceLabel: UILabel!
@@ -22,5 +22,12 @@ class HoffCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratingsFourht: UIImageView!
     @IBOutlet weak var ratingsFives: UIImageView!
 
+    
+    func set(object hoff: Hoff) {
+//        self.imageViewOne.downloaded(from: hoff.image)
+        self.priceLabel.text = "\(hoff.price) ₽"
+        self.nameLabel.text = hoff.name
+}
+    
     
 }
