@@ -8,38 +8,27 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController, UICollectionViewDelegate {
-    
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+   
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
-    var network = Network()
+
     var objects: [Hoff] = []
- //   var presenter = Presenter()
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setupView()
-//    }
-//
-//    private func setupView() {
-//        addImageToNavBar()
-//        collectionView.delegate = self
-////        collectionView.dataSource = self
-////        presenter.view = self
-////        presenter.fetchProducts()
-//    }
+    var presenter = Presenter()
     
     override func viewDidLoad() {
-         super.viewDidLoad()
-         network.fetchEvents { products in
-   //         self.objects = products
-            self.collectionView.reloadData()
-         } ifFailure: {_ in
-            print("Ошибка")
-        }
-
+        super.viewDidLoad()
+        setupView()
     }
-    
+
+    private func setupView() {
+        addImageToNavBar()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "HoffCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HoffCollectionViewCell")
+        presenter.view = self
+        presenter.fetchProducts()
+    }
     
     func didFailureObtainProducts(error: String) {
         
@@ -49,7 +38,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         self.objects = products
         self.collectionView.reloadData()
     }
-    
+     
     func addImageToNavBar() {
         if let navController = navigationController {
             let imageLogo = UIImage(named: "Image")
@@ -65,32 +54,19 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return objects.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hoffCell", for: indexPath) as! HoffCollectionViewCell
+        return cell
 
-  
+    }
+    
      func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    
-//
-//    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
-//        collectionView.deselectRow(at: indexPath, animated: true)
-//    }
-
-
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return objects.count
-    }
-
-    
-    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HoffCollectionViewCell", for: indexPath) as! HoffCollectionViewCell
-        
-
-        return cell
-    }
     
 }
 

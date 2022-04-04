@@ -24,7 +24,7 @@ class HoffCollectionViewCell: UICollectionViewCell {
 
     
     func set(object hoff: Hoff) {
-//        self.imageViewOne.downloaded(from: hoff.image)
+        self.imageViewOne.downloaded(from: hoff.image!)
         self.priceLabel.text = "\(hoff.price) ₽"
         self.nameLabel.text = hoff.name
 }
