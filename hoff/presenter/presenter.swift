@@ -7,17 +7,17 @@
 
 import Foundation
 
-class Presenter {
-    
-    var network = Network()
-    var view: ViewController?
-    
-    func fetchProducts() {
-        network.fetchEvents { products in
-            self.view?.didSuccessObtainProducts(products: products)
-        } ifFailure: { error in
-            print(error)
-            self.view?.didFailureObtainProducts(error: error)
-        }
-    }
-}
+//class Presenter {
+//    
+//    var network = Network()
+//    var view: ViewController?
+//    
+//    func fetchProducts() {
+//        network.fetchEvents { products in
+//            self.view?.didSuccessObtainProducts(products: products)
+//        } ifFailure: { error in
+//            print(error)
+//            self.view?.didFailureObtainProducts(error: error)
+//        }
+//    }
+//}

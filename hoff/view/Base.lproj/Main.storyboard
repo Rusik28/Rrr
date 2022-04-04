@@ -118,9 +118,9 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="168" height="321"/>
                                         <connections>
-                                            <outlet property="ImageViewOne" destination="C1U-Sv-Wcd" id="aYK-tH-rnc"/>
                                             <outlet property="descriptionLabel" destination="W49-Ex-h8s" id="oBx-cK-oe8"/>
                                             <outlet property="heartView" destination="Bah-7L-wDZ" id="L7R-M4-GZR"/>
+                                            <outlet property="imageViewOne" destination="C1U-Sv-Wcd" id="PJA-UB-Vvo"/>
                                             <outlet property="informationLabel" destination="NUK-3v-YyQ" id="Kue-xh-ZdQ"/>
                                             <outlet property="nameLabel" destination="pYJ-fe-58v" id="UkA-lK-6MD"/>
                                             <outlet property="oldPriceLabel" destination="yXF-lW-blN" id="P3V-zr-zko"/>

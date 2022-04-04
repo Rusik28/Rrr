@@ -12,22 +12,34 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
-    
+    var network = Network()
     var objects: [Hoff] = []
-    var presenter = Presenter()
+ //   var presenter = Presenter()
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        setupView()
+//    }
+//
+//    private func setupView() {
+//        addImageToNavBar()
+//        collectionView.delegate = self
+////        collectionView.dataSource = self
+////        presenter.view = self
+////        presenter.fetchProducts()
+//    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
+         super.viewDidLoad()
+         network.fetchEvents { products in
+   //         self.objects = products
+            self.collectionView.reloadData()
+         } ifFailure: {_ in
+            print("Ошибка")
+        }
+
     }
     
-    private func setupView() {
-        addImageToNavBar()
-        collectionView.delegate = self
-//        collectionView.dataSource = self
-        presenter.view = self
-        presenter.fetchProducts()
-    }
     
     func didFailureObtainProducts(error: String) {
         
@@ -54,26 +66,31 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     }
     
 
-//     func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-    
-    private func collectionView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+  
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
+    
+    
+//
+//    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
+//        collectionView.deselectRow(at: indexPath, animated: true)
+//    }
 
 
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return objects.count
-    }
-    
-    @objc(collectionView:cellForItemAtIndexPath:) private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HoffCollectionViewCell", for: indexPath) as! HoffCollectionViewCell
-    
-        return cell
+        // #warning Incomplete implementation, return the number of items
+        return objects.count
     }
 
+    
+    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HoffCollectionViewCell", for: indexPath) as! HoffCollectionViewCell
+        
+
+        return cell
+    }
     
 }
 
