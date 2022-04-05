@@ -27,7 +27,14 @@ class HoffCollectionViewCell: UICollectionViewCell {
         self.imageViewOne.downloaded(from: product.image)
         self.priceLabel.text = "\(product.prices) ₽"
         self.nameLabel.text = product.name
+        if product.discount == 0 {
+            self.sellLabel.isHidden = true
+        } else {
+            self.sellLabel.text = String("-" + "\(product.discount)" + "%")
+        }
+        
+    }
 }
     
     
-}
+
