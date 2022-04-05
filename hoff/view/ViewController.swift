@@ -16,16 +16,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var objects: [Hoff] = []
     var presenter = Presenter()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
     private func setupView() {
         addImageToNavBar()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "HoffCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HoffCollectionViewCell")
+        secondCollectionView.delegate = self
+        secondCollectionView.dataSource = self
+//        collectionView.register(UINib(nibName: "HoffCollectionViewCell", bundle: nil),
+// forCellWithReuseIdentifier: "HoffCell")
         presenter.view = self
         presenter.fetchProducts()
     }
@@ -54,20 +58,36 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    private func collectionView(_ collectionView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        collectionView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return objects.count
+        if collectionView == self.collectionView {
+            return objects.count
+        } else {
+            return 4
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hoffCell", for: indexPath) as! HoffCollectionViewCell
-        return cell
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == self.collectionView {
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hoffCell", for: indexPath) as! HoffCollectionViewCell
+//            cell.backgroundColor = .gray
+//            cell.set(object: objects[indexPath.row])
+            return cell
+        } else {
+            let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "hoffCellTwo", for: indexPath)
+//            cell2.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+            return cell2
+        }
+        
+        
     }
-    
-     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     
 }
 
+    
 

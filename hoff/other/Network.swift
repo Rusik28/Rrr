@@ -21,7 +21,7 @@ class Network {
                 switch response.result {
                 case .success(_):
                     if let data = try? response.result.get() {
-                    let result = try! JSONDecoder().decode(Hoff.self, from: data)
+                        let result = try! JSONDecoder().decode(Hoff.self, from: data)
                         ifSuccess(result)
                     }
                 case .failure(_): ifFailure(response.error?.localizedDescription ?? "Ошибка")
@@ -29,4 +29,5 @@ class Network {
                 }
             }
     }
+
 }

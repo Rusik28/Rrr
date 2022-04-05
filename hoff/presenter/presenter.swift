@@ -14,7 +14,7 @@ class Presenter {
     
     func fetchProducts() {
         network.fetchEvents { products in
-            self.view?.didSuccessObtainProducts(products: [products])
+   //         self.view?.didSuccessObtainProducts(products: products)
         } ifFailure: { error in
             print(error)
             self.view?.didFailureObtainProducts(error: error)

@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-Qi-8Cb">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-Qi-8Cb">
                                 <rect key="frame" x="20" y="191" width="374" height="705"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezB-Vg-ckM">
                                     <size key="itemSize" width="173" height="256"/>
@@ -36,9 +35,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="321"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1U-Sv-Wcd">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C1U-Sv-Wcd">
                                                     <rect key="frame" x="4" y="8" width="160" height="106"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="106" id="Hur-tt-VFt"/>
+                                                        <constraint firstAttribute="width" constant="160" id="aPd-rh-vUU"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-17%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugA-u5-0fS">
                                                     <rect key="frame" x="8" y="122" width="39" height="20"/>
@@ -115,6 +117,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C1U-Sv-Wcd" firstAttribute="leading" secondItem="cMO-aA-gLt" secondAttribute="leading" constant="4" id="DN0-bu-ZIH"/>
+                                                <constraint firstItem="C1U-Sv-Wcd" firstAttribute="top" secondItem="cMO-aA-gLt" secondAttribute="top" constant="8" id="sGE-tU-EF1"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="168" height="321"/>
                                         <connections>
@@ -150,7 +156,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g9p-lG-VrL" customClass="HoffCollectionViewCellTwo" customModule="hoff" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hoffCellTwo" id="g9p-lG-VrL" customClass="HoffCollectionViewCellTwo" customModule="hoff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Abg-9e-18b">
@@ -200,6 +206,11 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Угловые тканевые">
                                                         <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJH-Ne-n3u">
                                                     <rect key="frame" x="143" y="56" width="131" height="31"/>
@@ -210,6 +221,11 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Прямые кожанные">
                                                         <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-GW-Hv3">
                                                     <rect key="frame" x="278" y="56" width="133" height="31"/>
@@ -220,6 +236,11 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Угловые кожанные">
                                                         <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                         </collectionViewCellContentView>
@@ -237,6 +258,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zRH-Qi-8Cb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="7dQ-pH-04b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zRH-Qi-8Cb" secondAttribute="trailing" constant="20" id="WTw-7M-mSV"/>
+                            <constraint firstItem="zRH-Qi-8Cb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="bbS-p7-7Xt"/>
+                            <constraint firstItem="zRH-Qi-8Cb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="t9j-SM-vEt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Угловые диваны" id="cGy-v4-7vP"/>
                     <connections>
@@ -265,6 +292,12 @@
                                 <state key="normal" title="Перейти в каталог">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7v4-Nl-8lN"/>
                                 </connections>

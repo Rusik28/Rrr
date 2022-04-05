@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HoffCollectionViewCellTwo {
+class HoffCollectionViewCellTwo: UICollectionViewCell {
     
 @IBOutlet weak var oneButton: UIButton!
 @IBOutlet weak var twoButton: UIButton!
@@ -18,3 +18,7 @@ class HoffCollectionViewCellTwo {
     
     
 }
+
+
+
+

@@ -23,10 +23,10 @@ class HoffCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratingsFives: UIImageView!
 
     
-    func set(object hoff: Hoff) {
-        self.imageViewOne.downloaded(from: hoff.image!)
-        self.priceLabel.text = "\(hoff.price) ₽"
-        self.nameLabel.text = hoff.name
+    func set(object product: Product) {
+        self.imageViewOne.downloaded(from: product.image)
+        self.priceLabel.text = "\(product.prices) ₽"
+        self.nameLabel.text = product.name
 }
     
     
